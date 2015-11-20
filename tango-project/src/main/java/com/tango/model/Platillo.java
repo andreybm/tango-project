@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "platillo")
 public class Platillo {
-	
+
 	private Long platilloId;
 	private String nombre;
 	private String descripcion;
 	private String diasDisponibles;
-	
-	public Platillo(){
-		
+
+	public Platillo() {
+
 		super();
 	}
 
@@ -34,7 +34,8 @@ public class Platillo {
 	}
 
 	/**
-	 * @param platilloId the platilloId to set
+	 * @param platilloId
+	 *            the platilloId to set
 	 */
 	public void setPlatilloId(Long platilloId) {
 		this.platilloId = platilloId;
@@ -49,7 +50,8 @@ public class Platillo {
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * @param nombre
+	 *            the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -64,7 +66,8 @@ public class Platillo {
 	}
 
 	/**
-	 * @param descripcion the descripcion to set
+	 * @param descripcion
+	 *            the descripcion to set
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
@@ -79,13 +82,16 @@ public class Platillo {
 	}
 
 	/**
-	 * @param diasDisponibles the diasDisponibles to set
+	 * @param diasDisponibles
+	 *            the diasDisponibles to set
 	 */
 	public void setDiasDisponibles(String diasDisponibles) {
 		this.diasDisponibles = diasDisponibles;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -99,7 +105,9 @@ public class Platillo {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -134,7 +142,9 @@ public class Platillo {
 		return true;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -142,8 +152,5 @@ public class Platillo {
 		return "Platillo [platilloId=" + platilloId + ", nombre=" + nombre + ", descripcion=" + descripcion
 				+ ", diasDisponibles=" + diasDisponibles + "]";
 	}
-	
-	
-	
 
 }
