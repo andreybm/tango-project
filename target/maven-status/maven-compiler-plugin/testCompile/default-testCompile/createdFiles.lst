@@ -1,0 +1,9 @@
+com\tango\webapp\controller\UpdatePasswordControllerTest.class
+com\tango\webapp\filter\LocaleFilterTest.class
+com\tango\webapp\controller\PasswordHintControllerTest.class
+com\tango\webapp\listener\StartupListenerTest.class
+com\tango\webapp\filter\MockFilterChain.class
+com\tango\webapp\controller\SignupControllerTest.class
+com\tango\webapp\controller\BaseControllerTestCase.class
+com\tango\webapp\controller\UserControllerTest.class
+com\tango\webapp\controller\UserFormControllerTest.class
