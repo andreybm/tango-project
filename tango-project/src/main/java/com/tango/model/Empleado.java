@@ -8,12 +8,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement; 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Empleado.
+ */
 @XmlRootElement
 @Entity(name="empleado")
 public class Empleado extends BaseObject {
+	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4253758174925598379L;
+	
+	/** The Empleado id. */
 	private Long EmpleadoID;
+	
+	/** The Nombre. */
 	private String Nombre;
+	
+	/** The Departamento. */
 	private String Departamento;
 	
 	
@@ -66,38 +78,56 @@ public class Empleado extends BaseObject {
 			return false;
 		return true;
 	}
+	
 	/**
+	 * Gets the empleado id.
+	 *
 	 * @return the empleadoID
 	 */
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getEmpleadoID() {
 		return EmpleadoID;
 	}
+	
 	/**
+	 * Sets the empleado id.
+	 *
 	 * @param empleadoID the empleadoID to set
 	 */
 	public void setEmpleadoID(Long empleadoID) {
 		EmpleadoID = empleadoID;
 	}
+	
 	/**
+	 * Gets the nombre.
+	 *
 	 * @return the nombre
 	 */
 	public String getNombre() {
 		return Nombre;
 	}
+	
 	/**
+	 * Sets the nombre.
+	 *
 	 * @param nombre the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+	
 	/**
+	 * Gets the departamento.
+	 *
 	 * @return the departamento
 	 */
 	public String getDepartamento() {
 		return Departamento;
 	}
+	
 	/**
+	 * Sets the departamento.
+	 *
 	 * @param departamento the departamento to set
 	 */
 	public void setDepartamento(String departamento) {

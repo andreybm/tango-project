@@ -19,6 +19,10 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.appfuse.model.BaseObject;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Menu.
+ */
 @XmlRootElement
 @Entity(name="menu")
 public class Menu extends BaseObject {
@@ -66,9 +70,17 @@ public class Menu extends BaseObject {
 			return false;
 		return true;
 	}
+	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1110635914541765538L;
+	
+	/** The Menu id. */
 	private Long MenuID;
+	
+	/** The Empleado. */
 	private Empleado Empleado;
+	
+	/** The Comida. */
 	private Comida Comida;
 	
 	
@@ -85,19 +97,27 @@ public class Menu extends BaseObject {
 	
 	
 	/**
+	 * Gets the menu id.
+	 *
 	 * @return the menuID
 	 */
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getMenuID() {
 		return MenuID;
 	}
+	
 	/**
+	 * Sets the menu id.
+	 *
 	 * @param menuID the menuID to set
 	 */
 	public void setMenuID(Long menuID) {
 		MenuID = menuID;
 	}
+	
 	/**
+	 * Gets the empleado.
+	 *
 	 * @return the empleado
 	 */
 	@ManyToOne(cascade = CascadeType.ALL) 
@@ -105,13 +125,19 @@ public class Menu extends BaseObject {
 	public Empleado getEmpleado() {
 		return Empleado;
 	}
+	
 	/**
+	 * Sets the empleado.
+	 *
 	 * @param empleado the empleado to set
 	 */
 	public void setEmpleado(Empleado empleado) {
 		Empleado = empleado;
 	}
+	
 	/**
+	 * Gets the comida.
+	 *
 	 * @return the comida
 	 */
 	@ManyToOne(cascade = CascadeType.ALL) 
@@ -119,7 +145,10 @@ public class Menu extends BaseObject {
 	public Comida getComida() {
 		return Comida;
 	}
+	
 	/**
+	 * Sets the comida.
+	 *
 	 * @param comida the comida to set
 	 */
 	public void setComida(Comida comida) {

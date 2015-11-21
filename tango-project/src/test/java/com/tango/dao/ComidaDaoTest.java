@@ -22,10 +22,21 @@ import static org.junit.Assert.assertNotNull;
 import com.tango.dao.ComidaDao;
 import com.tango.model.Comida;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ComidaDaoTest.
+ */
 public class ComidaDaoTest extends BaseDaoTestCase {
+    
+    /** The comida dao. */
     @Autowired
     private ComidaDao comidaDao;
 
+    /**
+     * Test find comida by nombre.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFindComidaByNombre() throws Exception {
         List<Comida> comidas = comidaDao.findByNombre("Nachos"); 
