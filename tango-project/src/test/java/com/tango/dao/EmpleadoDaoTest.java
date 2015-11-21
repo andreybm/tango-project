@@ -11,7 +11,7 @@ package com.tango.dao;
 import org.appfuse.dao.BaseDaoTestCase;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.tango.model.TipoComida;
+import com.tango.model.Empleado;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
@@ -25,7 +25,7 @@ public class EmpleadoDaoTest extends BaseDaoTestCase {
     
     /** The tipo comida dao. */
     @Autowired
-    private TipoComidaDao tipoComidaDao;
+    private EmpleadoDao empleadoDao;
 
     /**
      * Test find tipo comida by descripcion.
@@ -33,10 +33,17 @@ public class EmpleadoDaoTest extends BaseDaoTestCase {
      * @throws Exception the exception
      */
     @Test
-    public void testFindTipoComidaByDescripcion() throws Exception {
-    	// find all foodType 
-        List<TipoComida> tipocomida = tipoComidaDao.findByDescripcion("Comida Rapida");
-        assertTrue(tipocomida.size() > 0);
+    public void testFindEmpleadoByNombre() throws Exception {
+    	// find all Empleados 
+        List<Empleado> empleado = empleadoDao.findByName("Andres Salas Loria");
+        assertTrue(empleado.size() > 0);
+    }
+    
+    @Test
+    public void testFindEmpleadoByDepartamento() throws Exception {
+    	// find all Empleados 
+        List<Empleado> empleado = empleadoDao.findByDepartamento("TI");
+        assertTrue(empleado.size() > 0);
     }
 
 }

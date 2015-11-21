@@ -40,19 +40,19 @@ public class ComidaDaoTest extends BaseDaoTestCase {
     @Test
     public void testFindComidaByNombre() throws Exception {
         List<Comida> comidas = comidaDao.findByNombre("Nachos"); 
-        boolean flagFoodType;
-        flagFoodType = false;
+        boolean flagTipoComida;
+        flagTipoComida= false;
         // print all foods with the associated FoodType
         for(Comida comida: comidas){
         	log.debug(comida.toString());
         	if(comida.getTipoComida() != null) 
         	{
-        		flagFoodType=true;
+        		flagTipoComida=true;
         		break;
         	}
         }
         // the test is OK if return one or more foods and FoodType
-        assertTrue(flagFoodType);       
+        assertTrue(flagTipoComida);       
         assertTrue(comidas.size() > 0);
     }
 }
