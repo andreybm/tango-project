@@ -1,0 +1,54 @@
+create table COMIDA 
+(
+   COMIDAID             bigint                         not null auto_increment,
+   NOMBRE               varchar                        null,
+   DESCRIPCION          varchar                        null,
+   DIAS                 varchar                        null,
+   TIPOCOMIDAID         bigint                         null,
+   constraint PK_COMIDA primary key clustered (COMIDAID)
+);
+
+alter table COMIDA
+   add constraint FK_COMIDA_REFERENCE_TIPOCOMI foreign key (TIPOCOMIDAID)
+      references TIPOCOMIDA (TIPOCOMIDAID)
+      on update restrict
+      on delete restrict;
+
+	  
+
+create table TIPOCOMIDA 
+(
+   TIPOCOMIDAID         bigint                         not null auto_increment,
+   DESCRIPCION          varchar                        null,
+   constraint PK_TIPOCOMIDA primary key clustered (TIPOCOMIDAID)
+);
+
+
+create table MENU 
+(
+   MENUID               bigint                         not null	auto_increment,
+   COMIDAID             bigint                         null,
+   EMPLEADOID           bigint                         null,
+   constraint PK_MENU primary key clustered (MENUID)
+);
+
+alter table MENU
+   add constraint FK_MENU_REFERENCE_COMIDA foreign key (COMIDAID)
+      references COMIDA (COMIDAID)
+      on update restrict
+      on delete restrict;
+
+alter table MENU
+   add constraint FK_MENU_REFERENCE_EMPLEADO foreign key (EMPLEADOID)
+      references EMPLEADO (EMPLEADOID)
+      on update restrict
+      on delete restrict;
+
+	  
+create table EMPLEADO 
+(
+   EMPLEADOID           bigint                         not null	auto_increment,
+   NOMBRE               varchar                        null,
+   DEPARTAMENTO         varchar                        null,
+   constraint PK_EMPLEADO primary key clustered (EMPLEADOID)
+);
