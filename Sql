@@ -1,54 +1,143 @@
-create table COMIDA 
-(
-   COMIDAID             bigint                         not null auto_increment,
-   NOMBRE               varchar                        null,
-   DESCRIPCION          varchar                        null,
-   DIAS                 varchar                        null,
-   TIPOCOMIDAID         bigint                         null,
-   constraint PK_COMIDA primary key clustered (COMIDAID)
-);
 
-alter table COMIDA
-   add constraint FK_COMIDA_REFERENCE_TIPOCOMI foreign key (TIPOCOMIDAID)
-      references TIPOCOMIDA (TIPOCOMIDAID)
-      on update restrict
-      on delete restrict;
+--
+-- Database: `tango_project`
+--
 
-	  
+-- --------------------------------------------------------
 
-create table TIPOCOMIDA 
-(
-   TIPOCOMIDAID         bigint                         not null auto_increment,
-   DESCRIPCION          varchar                        null,
-   constraint PK_TIPOCOMIDA primary key clustered (TIPOCOMIDAID)
-);
+--
+-- Table structure for table `comida`
+--
 
+CREATE TABLE IF NOT EXISTS `comida` (
+  `COMIDAID` bigint(255) NOT NULL,
+  `NOMBRE` varchar(1000) NOT NULL,
+  `DESCRIPCION` varchar(1000) NOT NULL,
+  `DIAS` varchar(1000) NOT NULL,
+  `TIPOCOMIDAID` bigint(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-create table MENU 
-(
-   MENUID               bigint                         not null	auto_increment,
-   COMIDAID             bigint                         null,
-   EMPLEADOID           bigint                         null,
-   constraint PK_MENU primary key clustered (MENUID)
-);
+--
+-- Dumping data for table `comida`
+--
 
-alter table MENU
-   add constraint FK_MENU_REFERENCE_COMIDA foreign key (COMIDAID)
-      references COMIDA (COMIDAID)
-      on update restrict
-      on delete restrict;
+INSERT INTO `comida` (`COMIDAID`, `NOMBRE`, `DESCRIPCION`, `DIAS`, `TIPOCOMIDAID`) VALUES
+(0, 'hamburguesa', 'pan-torta', 'lunes-miercoles', 0),
+(1, 'Ensalada Cesar', 'lechuga-tomate', 'jueves', 1);
 
-alter table MENU
-   add constraint FK_MENU_REFERENCE_EMPLEADO foreign key (EMPLEADOID)
-      references EMPLEADO (EMPLEADOID)
-      on update restrict
-      on delete restrict;
+-- --------------------------------------------------------
 
-	  
-create table EMPLEADO 
-(
-   EMPLEADOID           bigint                         not null	auto_increment,
-   NOMBRE               varchar                        null,
-   DEPARTAMENTO         varchar                        null,
-   constraint PK_EMPLEADO primary key clustered (EMPLEADOID)
-);
+--
+-- Table structure for table `empleado`
+--
+
+CREATE TABLE IF NOT EXISTS `empleado` (
+  `EMPLEADOID` bigint(255) NOT NULL,
+  `NOMBRE` varchar(1000) NOT NULL,
+  `DEPARTAMENTO` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `empleado`
+--
+
+INSERT INTO `empleado` (`EMPLEADOID`, `NOMBRE`, `DEPARTAMENTO`) VALUES
+(0, 'JULIO', 'RAPIDA'),
+(1, 'ENOC', 'ENTREGA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu`
+--
+
+CREATE TABLE IF NOT EXISTS `menu` (
+  `MENUID` bigint(20) NOT NULL,
+  `COMIDAID` bigint(20) DEFAULT NULL,
+  `EMPLEADOID` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`MENUID`, `COMIDAID`, `EMPLEADOID`) VALUES
+(1, 0, 0),
+(2, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tipocomida`
+--
+
+CREATE TABLE IF NOT EXISTS `tipocomida` (
+  `TIPOCOMIDAID` bigint(255) NOT NULL,
+  `DESCRIPCION` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tipocomida`
+--
+
+INSERT INTO `tipocomida` (`TIPOCOMIDAID`, `DESCRIPCION`) VALUES
+(0, 'comida rapida'),
+(1, 'ensalada');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `comida`
+--
+ALTER TABLE `comida`
+  ADD PRIMARY KEY (`COMIDAID`),
+  ADD KEY `FK_COMIDA_REFERENCE_TIPOCOMIDA` (`TIPOCOMIDAID`);
+
+--
+-- Indexes for table `empleado`
+--
+ALTER TABLE `empleado`
+  ADD PRIMARY KEY (`EMPLEADOID`);
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`MENUID`),
+  ADD KEY `FK_MENU_REFERENCE_COMIDA` (`COMIDAID`),
+  ADD KEY `FK_MENU_REFERENCE_EMPLEADO` (`EMPLEADOID`);
+
+--
+-- Indexes for table `tipocomida`
+--
+ALTER TABLE `tipocomida`
+  ADD PRIMARY KEY (`TIPOCOMIDAID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `MENUID` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comida`
+--
+ALTER TABLE `comida`
+  ADD CONSTRAINT `FK_COMIDA_REFERENCE_TIPOCOMIDA` FOREIGN KEY (`TIPOCOMIDAID`) REFERENCES `tipocomida` (`TIPOCOMIDAID`);
+
+--
+-- Constraints for table `menu`
+--
+ALTER TABLE `menu`
+  ADD CONSTRAINT `FK_MENU_REFERENCE_COMIDA` FOREIGN KEY (`COMIDAID`) REFERENCES `comida` (`COMIDAID`),
+  ADD CONSTRAINT `FK_MENU_REFERENCE_EMPLEADO` FOREIGN KEY (`EMPLEADOID`) REFERENCES `empleado` (`EMPLEADOID`);
+
