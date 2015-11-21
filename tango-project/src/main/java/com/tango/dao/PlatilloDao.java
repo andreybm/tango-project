@@ -1,5 +1,8 @@
 package com.tango.dao;
-
+/**
+ * @author Esteban Enoc
+ *
+ */
 import org.appfuse.dao.GenericDao;
 
 import com.tango.model.Platillo;

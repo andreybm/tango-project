@@ -1,6 +1,9 @@
 package com.tango.dao.hibernate;
 
-
+/**
+ * @author Esteban Enoc
+ *
+ */
 import java.util.List;
 
 import org.appfuse.dao.hibernate.GenericDaoHibernate;
