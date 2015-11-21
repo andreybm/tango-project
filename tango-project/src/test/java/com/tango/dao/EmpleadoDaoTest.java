@@ -17,10 +17,21 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmpleadoDaoTest.
+ */
 public class EmpleadoDaoTest extends BaseDaoTestCase {
+    
+    /** The tipo comida dao. */
     @Autowired
     private EmpleadoDao empleadoDao;
 
+    /**
+     * Test find tipo comida by descripcion.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFindEmpleadoByNombre() throws Exception {
     	// find all Empleados 

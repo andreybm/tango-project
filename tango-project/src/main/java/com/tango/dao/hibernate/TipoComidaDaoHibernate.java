@@ -17,16 +17,23 @@ import org.springframework.stereotype.Repository;
 import com.tango.dao.TipoComidaDao;
 import com.tango.model.TipoComida;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TipoComidaDaoHibernate.
+ */
 @Repository("tipoComidaDao")
 public class TipoComidaDaoHibernate extends GenericDaoHibernate<TipoComida, Long> implements TipoComidaDao {
 
 	/**
-	 * constructor
+	 * constructor.
 	 */
     public TipoComidaDaoHibernate() {
         super(TipoComida.class);
     }
 
+    /* (non-Javadoc)
+     * @see com.tango.dao.TipoComidaDao#findByDescripcion(java.lang.String)
+     */
     @Override
     public List<TipoComida> findByDescripcion(String Descripcion) {
         return getSession().createCriteria(TipoComida.class).add(Restrictions.eq("Descripcion", Descripcion)).list();

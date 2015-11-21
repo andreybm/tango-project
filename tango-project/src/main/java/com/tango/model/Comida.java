@@ -24,16 +24,33 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.appfuse.model.BaseObject;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Comida.
+ */
 @XmlRootElement
 @Entity(name="comida")
 public class Comida extends BaseObject {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 4253758174925598379L;
+	
+	/** The Comida id. */
 	private Long ComidaID;
+	
+	/** The Nombre. */
 	private String Nombre;
+	
+	/** The Descripcion. */
 	private String Descripcion;
+	
+	/** The Dias. */
 	private String Dias;
+	
+	/** The Tipo comida. */
 	private TipoComida TipoComida; 
+	
+	/** The menus. */
 	private List<Menu> menus = new ArrayList<Menu>();
 	
 	
@@ -105,59 +122,86 @@ public class Comida extends BaseObject {
 			return false;
 		return true;
 	}
+	
 	/**
+	 * Gets the comida id.
+	 *
 	 * @return the comidaID
 	 */
 	@Id @GeneratedValue(strategy = GenerationType.AUTO) 
 	public Long getComidaID() {
 		return ComidaID;
 	}
+	
 	/**
+	 * Sets the comida id.
+	 *
 	 * @param comidaID the comidaID to set
 	 */
 	public void setComidaID(Long comidaID) {
 		ComidaID = comidaID;
 	}
+	
 	/**
+	 * Gets the nombre.
+	 *
 	 * @return the nombre
 	 */
 	@Column(name="Nombre", length=50) 
 	public String getNombre() {
 		return Nombre;
 	}
+	
 	/**
+	 * Sets the nombre.
+	 *
 	 * @param nombre the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+	
 	/**
+	 * Gets the descripcion.
+	 *
 	 * @return the descripcion
 	 */
 	@Column(name="Descripcion", length=50) 
 	public String getDescripcion() {
 		return Descripcion;
 	}
+	
 	/**
+	 * Sets the descripcion.
+	 *
 	 * @param descripcion the descripcion to set
 	 */
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
+	
 	/**
+	 * Gets the dias.
+	 *
 	 * @return the dias
 	 */
 	@Column(name="Dias", length=50) 
 	public String getDias() {
 		return Dias;
 	}
+	
 	/**
+	 * Sets the dias.
+	 *
 	 * @param dias the dias to set
 	 */
 	public void setDias(String dias) {
 		Dias = dias;
 	}
+	
 	/**
+	 * Gets the tipo comida.
+	 *
 	 * @return the tipoComida
 	 */
 	@ManyToOne (cascade = CascadeType.ALL)
@@ -165,20 +209,29 @@ public class Comida extends BaseObject {
 	public TipoComida getTipoComida() {
 		return TipoComida;
 	}
+	
 	/**
+	 * Sets the tipo comida.
+	 *
 	 * @param tipoComida the tipoComida to set
 	 */
 	public void setTipoComida(TipoComida tipoComida) {
 		TipoComida = tipoComida;
 	}
+	
 	/**
+	 * Gets the menus.
+	 *
 	 * @return the menus
 	 */
 	@OneToMany(mappedBy = "comida", cascade = CascadeType.ALL)
 	public List<Menu> getMenus() {
 		return menus;
 	}
+	
 	/**
+	 * Sets the menus.
+	 *
 	 * @param menus the menus to set
 	 */
 	public void setMenus(List<Menu> menus) {

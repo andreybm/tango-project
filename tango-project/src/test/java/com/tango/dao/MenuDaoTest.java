@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+package com.tango.dao;
+
+/**
+ * The Class MenuDaoTest.
+ */
+=======
 /**
  * 
  */
@@ -17,7 +24,12 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
+<<<<<<< HEAD
 public class MenuDaoTest extends BaseDaoTestCase {
+=======
+>>>>>>> origin/master
+public class MenuDaoTest {
+>>>>>>> origin/master
 
 	/*private Comida ComidaID;
 	private EmpleadoDao EmpladoDao;

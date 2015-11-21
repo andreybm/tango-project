@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /*import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -21,27 +22,40 @@ import javax.persistence.OneToMany;
 import javax.persistence.FetchType;*/
 
 /**
- * @author Esteban Enoc
+ * The Class TipoComida.
  *
+ * @author Esteban Enoc
  */
 @XmlRootElement
 @Entity(name="tipocomida")
 public class TipoComida extends BaseObject {
 	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1106630883938632257L;
+	
+	/** The Tipo comida id. */
 	private Long TipoComidaID;
+    
+    /** The Descripcion. */
     private String Descripcion;
+    
+    /** The Comidas. */
     private List<Comida> Comidas = new ArrayList<Comida>();
     
     
     
 	/**
+	 * Gets the comidas.
+	 *
 	 * @return the comidas
 	 */
 	public List<Comida> getComidas() {
 		return Comidas;
 	}
+	
 	/**
+	 * Sets the comidas.
+	 *
 	 * @param comidas the comidas to set
 	 */
 	public void setComidas(List<Comida> comidas) {
@@ -89,27 +103,39 @@ public class TipoComida extends BaseObject {
 			return false;
 		return true;
 	}
+	
 	/**
+	 * Gets the tipo comida id.
+	 *
 	 * @return the tipoComidaID
 	 */
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getTipoComidaID() {
 		return TipoComidaID;
 	}
+	
 	/**
+	 * Sets the tipo comida id.
+	 *
 	 * @param tipoComidaID the tipoComidaID to set
 	 */
 	public void setTipoComidaID(Long tipoComidaID) {
 		TipoComidaID = tipoComidaID;
 	}
+	
 	/**
+	 * Gets the descripcion.
+	 *
 	 * @return the descripcion
 	 */
 	@Column(name="Descripcion", length=50) 
 	public String getDescripcion() {
 		return Descripcion;
 	}
+	
 	/**
+	 * Sets the descripcion.
+	 *
 	 * @param descripcion the descripcion to set
 	 */
 	public void setDescripcion(String descripcion) {
