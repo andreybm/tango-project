@@ -39,6 +39,11 @@ public class EmpleadoDaoTest extends BaseDaoTestCase {
         assertTrue(empleado.size() > 0);
     }
     
+    /**
+     * Test find empleado by departamento.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFindEmpleadoByDepartamento() throws Exception {
     	// find all Empleados 

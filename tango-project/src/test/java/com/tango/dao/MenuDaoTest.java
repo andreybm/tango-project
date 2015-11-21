@@ -13,9 +13,14 @@ import com.tango.model.Empleado;
 import com.tango.model.Menu;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MenuDaoTest.
+ */
 public class MenuDaoTest extends BaseDaoTestCase {
 
-	 @Autowired
+	 /** The Menu dao. */
+ 	@Autowired
 	    private MenuDao MenuDao;
 
 }

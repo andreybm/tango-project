@@ -13,14 +13,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tango.model.TipoComida;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author Esteban Enoc
+ * The Class TipoComidaDaoTest.
  *
+ * @author Esteban Enoc
  */
 public class TipoComidaDaoTest extends BaseDaoTestCase {
+	
+	/** The tipo comida dao. */
 	@Autowired
     private TipoComidaDao tipoComidaDao;
 
+    /**
+     * Test find tipo comida by descripcion.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void testFindTipoComidaByDescripcion() throws Exception {
     	// find all foodType 
