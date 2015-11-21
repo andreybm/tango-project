@@ -22,13 +22,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import javax.persistence.Lob;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.appfuse.model.BaseObject;
 
 @XmlRootElement
 @Entity(name="comida")
-public class Comida {
+public class Comida extends BaseObject {
 
 	private static final long serialVersionUID = 4253758174925598379L;
 	private Long ComidaID;
