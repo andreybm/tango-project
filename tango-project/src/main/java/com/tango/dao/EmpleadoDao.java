@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface EmpleadoDao extends GenericDao<Empleado, Long> {
 	
-	 public List<Empleado> findByName(String Empleado);
+	 public List<Empleado> findByName(String Nombre);
 
 	 public List<Empleado> findByDepartamento(String Departamento);
 
