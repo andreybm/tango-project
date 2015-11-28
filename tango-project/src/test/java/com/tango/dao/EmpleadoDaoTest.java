@@ -23,12 +23,12 @@ import static org.junit.Assert.assertTrue;
  */
 public class EmpleadoDaoTest extends BaseDaoTestCase {
     
-    /** The tipo comida dao. */
+    /** The Empleado dao. */
     @Autowired
     private EmpleadoDao empleadoDao;
 
     /**
-     * Test find tipo comida by descripcion.
+     * Test find Empleado by nombre.
      *
      * @throws Exception the exception
      */

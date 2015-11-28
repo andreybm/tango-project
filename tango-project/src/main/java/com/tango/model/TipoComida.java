@@ -1,5 +1,6 @@
 /**
- * 
+ * @author Esteban Enoc
+ *
  */
 package com.tango.model;
 
@@ -14,12 +15,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 // TODO: Auto-generated Javadoc
-/*import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import javax.persistence.FetchType;*/
 
 /**
  * The Class TipoComida.
@@ -29,118 +24,6 @@ import javax.persistence.FetchType;*/
 @XmlRootElement
 @Entity(name="tipocomida")
 public class TipoComida extends BaseObject {
+
 	
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1106630883938632257L;
-	
-	/** The Tipo comida id. */
-	private Long TipoComidaID;
-    
-    /** The Descripcion. */
-    private String Descripcion;
-    
-    /** The Comidas. */
-    private List<Comida> Comidas = new ArrayList<Comida>();
-    
-    
-    
-	/**
-	 * Gets the comidas.
-	 *
-	 * @return the comidas
-	 */
-	public List<Comida> getComidas() {
-		return Comidas;
-	}
-	
-	/**
-	 * Sets the comidas.
-	 *
-	 * @param comidas the comidas to set
-	 */
-	public void setComidas(List<Comida> comidas) {
-		Comidas = comidas;
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "TipoComida [TipoComidaID=" + TipoComidaID + ", Descripcion=" + Descripcion + "]";
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((Descripcion == null) ? 0 : Descripcion.hashCode());
-		result = prime * result + ((TipoComidaID == null) ? 0 : TipoComidaID.hashCode());
-		return result;
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TipoComida other = (TipoComida) obj;
-		if (Descripcion == null) {
-			if (other.Descripcion != null)
-				return false;
-		} else if (!Descripcion.equals(other.Descripcion))
-			return false;
-		if (TipoComidaID == null) {
-			if (other.TipoComidaID != null)
-				return false;
-		} else if (!TipoComidaID.equals(other.TipoComidaID))
-			return false;
-		return true;
-	}
-	
-	/**
-	 * Gets the tipo comida id.
-	 *
-	 * @return the tipoComidaID
-	 */
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	public Long getTipoComidaID() {
-		return TipoComidaID;
-	}
-	
-	/**
-	 * Sets the tipo comida id.
-	 *
-	 * @param tipoComidaID the tipoComidaID to set
-	 */
-	public void setTipoComidaID(Long tipoComidaID) {
-		TipoComidaID = tipoComidaID;
-	}
-	
-	/**
-	 * Gets the descripcion.
-	 *
-	 * @return the descripcion
-	 */
-	@Column(name="Descripcion", length=50) 
-	public String getDescripcion() {
-		return Descripcion;
-	}
-	
-	/**
-	 * Sets the descripcion.
-	 *
-	 * @param descripcion the descripcion to set
-	 */
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
-	}
-    
-    
 }
