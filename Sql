@@ -6,19 +6,19 @@
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comida`
+-- Table structure for table `food`
 --
 
-CREATE TABLE IF NOT EXISTS `comida` (
-  `COMIDAID` bigint(255) NOT NULL,
-  `NOMBRE` varchar(1000) NOT NULL,
-  `DESCRIPCION` varchar(1000) NOT NULL,
-  `DIAS` varchar(1000) NOT NULL,
-  `TIPOCOMIDAID` bigint(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `food` 
+`FOOD_ID` bigint(255) NOT NULL, 
+`DISH_NAME` varchar(50) NOT NULL, 
+`DISH_DESCRIPTION` varchar(100) NOT NULL, 
+`DAYS_SERVED` varchar(50) NOT NULL, 
+`CATEGORY_ID` bigint(255) NOT NULL )
+ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 --
--- Dumping data for table `comida`
+-- Dumping data for table `food`
 --
 
 INSERT INTO `comida` (`COMIDAID`, `NOMBRE`, `DESCRIPCION`, `DIAS`, `TIPOCOMIDAID`) VALUES
@@ -72,12 +72,13 @@ INSERT INTO `menu` (`MENUID`, `COMIDAID`, `EMPLEADOID`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tipocomida` (
-  `TIPOCOMIDAID` bigint(255) NOT NULL,
-  `DESCRIPCION` varchar(1000) NOT NULL
+  `CATEGORY_ID` bigint(255) NOT NULL,
+  CATEGORY_DESCRIPTION` varchar(1000) NOT NULL,
+  `CATEGORY_DESCRIPTION` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tipocomida`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `tipocomida` (`TIPOCOMIDAID`, `DESCRIPCION`) VALUES
@@ -131,8 +132,8 @@ ALTER TABLE `menu`
 --
 -- Constraints for table `comida`
 --
-ALTER TABLE `comida`
-  ADD CONSTRAINT `FK_COMIDA_REFERENCE_TIPOCOMIDA` FOREIGN KEY (`TIPOCOMIDAID`) REFERENCES `tipocomida` (`TIPOCOMIDAID`);
+ALTER TABLE `food`
+  ADD CONSTRAINT `FK_FOOD_REFERENCE_CATEGORY` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `category` (`CATEGORY_ID`);
 
 --
 -- Constraints for table `menu`
