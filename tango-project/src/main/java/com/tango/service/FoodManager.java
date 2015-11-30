@@ -1,8 +1,8 @@
 package com.tango.service;
 
+import com.tango.model.Food;
 import org.appfuse.service.GenericManager;
 
-import com.tango.model.Food;
 
 import javax.jws.WebService;
 import javax.ws.rs.GET;
@@ -15,10 +15,12 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 	
 	@WebService
-	@Path("/menu")
+	@Path("/Food")
 	public interface FoodManager extends GenericManager<Food, Long> {
 
-		
-	
+		@GET
+		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+		List<Food> getFood();
+
 
 }
