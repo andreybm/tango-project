@@ -26,8 +26,14 @@ public FoodManagerImpl(FoodDao foodDao) {
 	this.foodDao = foodDao;
 }
 
+@Override
+public List<Food> getFood() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 	
-	@Override
+
 	
 
 }
