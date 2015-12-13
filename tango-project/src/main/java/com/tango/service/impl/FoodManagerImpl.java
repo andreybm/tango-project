@@ -26,8 +26,15 @@ public FoodManagerImpl(FoodDao foodDao) {
 	this.foodDao = foodDao;
 }
 
-	
-	@Override
-	
+@Override
+public List<Food> getFood() {
+	return foodDao.getAll();
+}
 
+public Food findByCategory(Food category) {
+	return category;
+}
+
+	
+	
 }

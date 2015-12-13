@@ -6,6 +6,7 @@ import org.appfuse.service.GenericManager;
 
 import javax.jws.WebService;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -21,6 +22,11 @@ import java.util.List;
 		@GET
 		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 		List<Food> getFood();
-
+		
+		@POST
+		@Path("/food/category}/")
+		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+		Food findByCategory(Food category);
+		
 
 }
