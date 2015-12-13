@@ -1,33 +1,27 @@
 package com.tango.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-
 import org.appfuse.model.BaseObject;
+
 
 @XmlRootElement
 @Entity
 @Table(name = "employee")
 
-public class Employee extends BaseObject { 
-	
+public class Employee extends BaseObject {
+
 	private Long employeeId;
 	private String name;
-	//private Department department;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "employee_id", unique = true, nullable = false)
-	@ManyToOne
 	public Long getemployeeId() {
 		return employeeId;
 	}
@@ -81,20 +75,5 @@ public class Employee extends BaseObject {
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", name=" + name + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

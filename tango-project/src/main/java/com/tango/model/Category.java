@@ -18,6 +18,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "category")
 public class Category extends BaseObject {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long categoryId;
 	private Food food;
 	private String categoryName;

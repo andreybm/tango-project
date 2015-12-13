@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 	
 	@WebService
-	@Path("/Food")
+	@Path("/food")
 	public interface FoodManager extends GenericManager<Food, Long> {
 
 		@GET

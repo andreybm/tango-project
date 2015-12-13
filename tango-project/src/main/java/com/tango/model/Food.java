@@ -7,13 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.appfuse.model.BaseObject;
 
+@SuppressWarnings("serial")
 @XmlRootElement
 @Entity
 @Table(name = "food")
@@ -28,6 +30,8 @@ public class Food extends BaseObject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "food_id", unique = true, nullable = false)
+	
+	@ManyToOne
 	public Long getFoodId() {
 		return foodId;
 	}
@@ -37,7 +41,7 @@ public class Food extends BaseObject {
 		this.foodId = foodId;
 	}
 
-	@OneToOne
+	@OneToMany
 	public Set<Category> getCategory() {
 		return category;
 	}

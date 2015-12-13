@@ -8,5 +8,10 @@
     <session-factory>
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
+        <mapping class="org.appfuse.model.Employee"/>
+        <mapping class="org.appfuse.model.Login"/>
+        <mapping class="org.appfuse.model.Food"/>
+        <mapping class="org.appfuse.model.Category"/>
+        <mapping class="org.appfuse.model.Menu"/>
     </session-factory>
 </hibernate-configuration>
