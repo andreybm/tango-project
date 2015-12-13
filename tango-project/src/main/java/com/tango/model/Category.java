@@ -41,7 +41,7 @@ public class Category extends BaseObject {
 		return food;
 	}
 
-	public void setPerson(Food food) {
+	public void setFood(Food food) {
 		this.food = food;
 	}
 

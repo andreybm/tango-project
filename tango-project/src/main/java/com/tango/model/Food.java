@@ -24,7 +24,7 @@ public class Food extends BaseObject {
 	private String dishDescription;
 	private String daysServed;
 
-	// START SNIPPET: personId
+	// START SNIPPET: foodId
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "food_id", unique = true, nullable = false)
