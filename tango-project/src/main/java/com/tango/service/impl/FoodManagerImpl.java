@@ -35,6 +35,5 @@ public Food findByCategory(Food category) {
 	return category;
 }
 
-	
-	
+
 }
