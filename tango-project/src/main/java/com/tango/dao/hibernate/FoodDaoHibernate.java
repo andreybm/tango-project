@@ -21,10 +21,10 @@ public class FoodDaoHibernate extends GenericDaoHibernate<Food, Long>implements 
 	}
 
 	
-	public List<Food> findByCategory(String category) {
+	public List<Food> findByCategory(String foodCategory) {
 		@SuppressWarnings("unchecked")
-		List<Food> foodList = getSession().createCriteria(Food.class).createAlias("dishCategory", "dc")
-				.add(Restrictions.eq("dc.category", category)).list();
+		List<Food> foodList = getSession().createCriteria(Food.class).createAlias("foodCategory", "fc")
+				.add(Restrictions.eq("fc.category", foodCategory)).list();
 		return foodList;
 	}
 }

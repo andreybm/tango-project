@@ -119,4 +119,42 @@
             <value description="role_id">-2</value>
         </row>
     </table>
+    
+        <table name="food_category">
+        <column>category_id</column>
+        <column>category_name</column>
+        <column>category_description</column>
+        <row>
+            <value>1</value>
+            <value>Hamburguesas</value>
+            <value>Proba nuestras deliciosas hamburguesas, no te vas a arrepentir.</value>
+        </row>
+         <row>
+            <value>2</value>
+            <value>Ensaladas</value>
+            <value>Frescas ensaladas con vegetales de nuestro huerto.</value>
+        </row>
+    </table>
+    
+    <table name="food">
+        <column>food_id</column>
+        <column>dish_name</column>
+        <column>dish_description</column>
+        <column>days_served</column>
+        <column>category_id</column>
+        <row>
+            <value>1</value>
+            <value>Hamburguesa</value>
+            <value>Deliciosa hamburguesa de la casa con una exquisita torta.</value>
+            <value>Lunes a Viernes</value>
+            <value>1</value>
+        </row>
+         <row>
+            <value>2</value>
+            <value>Ensalada Cesar</value>
+            <value>Fresca ensalada con vegetales de nuestro huerto.</value>
+            <value>Jueves</value>
+            <value>2</value>
+        </row>
+    </table>
 </dataset>

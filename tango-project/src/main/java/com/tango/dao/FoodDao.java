@@ -9,5 +9,5 @@ public interface FoodDao extends GenericDao<Food, Long> {
 
 	public List<Food> findByDishName(String dishName);
 
-	public List<Food> findByCategory(String category);
+	public List<Food> findByCategory(String foodCategory);
 }

@@ -2,18 +2,18 @@ package com.tango.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "category")
-public class CategoryDTO {
+@XmlRootElement(name = "foodCategory")
+public class FoodCategoryDTO {
 
 	private Long categoryId;
 	private String categoryName;
 	private String categoryDescription;
 
-	public CategoryDTO() {
+	public FoodCategoryDTO() {
 		super();
 	}
 
-	public CategoryDTO(Long categoryId, String categoryName, String categoryDescription) {
+	public FoodCategoryDTO(Long categoryId, String categoryName, String categoryDescription) {
 		super();
 		this.categoryId = categoryId;
 		this.categoryName = categoryName;

@@ -24,9 +24,8 @@ import java.util.List;
 		List<Food> getFood();
 		
 		@POST
-		@Path("/food/category}/")
+		@Path("/food/{category}/")
 		@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 		Food findByCategory(Food category);
-		
-
+	
 }

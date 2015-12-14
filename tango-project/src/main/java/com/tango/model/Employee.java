@@ -16,6 +16,10 @@ import org.appfuse.model.BaseObject;
 
 public class Employee extends BaseObject {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long employeeId;
 	private String name;
 	

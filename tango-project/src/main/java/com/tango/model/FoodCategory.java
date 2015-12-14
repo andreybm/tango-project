@@ -13,15 +13,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.appfuse.model.BaseObject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Objects;
 
-@XmlRootElement(name = "Category")
+@SuppressWarnings("serial")
+@XmlRootElement(name = "FoodCategory")
 @Entity
-@Table(name = "category")
-public class Category extends BaseObject {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@Table(name = "food_category")
+public class FoodCategory extends BaseObject {
+
 	private Long categoryId;
 	private Food food;
 	private String categoryName;
@@ -69,38 +68,29 @@ public class Category extends BaseObject {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((categoryDescription == null) ? 0 : categoryDescription.hashCode());
-		result = prime * result + ((categoryId == null) ? 0 : categoryId.hashCode());
-		result = prime * result + ((categoryName == null) ? 0 : categoryName.hashCode());
-		return result;
+		int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.categoryId);
+        hash = 41 * hash + Objects.hashCode(this.categoryName);
+        hash = 41 * hash + Objects.hashCode(this.categoryDescription);
+        return hash;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Category other = (Category) obj;
-		if (categoryDescription == null) {
-			if (other.categoryDescription != null)
-				return false;
-		} else if (!categoryDescription.equals(other.categoryDescription))
-			return false;
-		if (categoryId == null) {
-			if (other.categoryId != null)
-				return false;
-		} else if (!categoryId.equals(other.categoryId))
-			return false;
-		if (categoryName == null) {
-			if (other.categoryName != null)
-				return false;
-		} else if (!categoryName.equals(other.categoryName))
-			return false;
+		final FoodCategory other = (FoodCategory) obj;
+		if (!Objects.equals(this.categoryId, other.categoryId)) {
+            return false;
+        }
+		if (!Objects.equals(this.categoryName, other.categoryName)) {
+            return false;
+        }
+		if (!Objects.equals(this.categoryDescription, other.categoryDescription)) {
+            return false;
+        }
 		return true;
 	}
 

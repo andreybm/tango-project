@@ -22,6 +22,8 @@
         </jaxrs:features>
         <jaxrs:serviceBeans>
             <ref bean="userManager"/>
+            <ref bean="foodManager"/>
+            <ref bean="MenuManager"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jsonProvider"/>
