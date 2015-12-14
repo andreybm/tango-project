@@ -16,7 +16,6 @@ import com.tango.model.Menu;
 public interface MenuManager extends GenericManager<Menu, Long>{
 
 	@GET
-	@Path("/valid/")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	List<Menu> getMenu();
 	

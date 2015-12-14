@@ -17,14 +17,21 @@ import com.tango.dao.MenuDao;
 @WebService(serviceName = "MenuService", endpointInterface = "com.tango.service.MenuManager")
 public class MenuManagerImpl extends GenericManagerImpl<Menu, Long> implements MenuManager{
 
-	MenuDao menudao;
+	MenuDao menuDao;
+	
+	public MenuManagerImpl()
+	{
+		
+	}
 	
 	@Autowired
-	public MenuManagerImpl(MenuDao menudao) {
-		super(MenuDao);
-		this.menudao = menudao;
+	public MenuManagerImpl(MenuDao menuDao)
+	{
+		//super(menuDao);
+		this.menuDao = menuDao;
+		
 	}
-
+	
 	@Override
 	public List<Menu> getMenu() {
 		// TODO Auto-generated method stub
