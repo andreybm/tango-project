@@ -17,30 +17,38 @@ public class LoginManagerImpl extends GenericManagerImpl<Login, Long> implements
 	
 	LoginDao loginDao;
 
-public LoginManagerImpl() {
-}
+	public LoginManagerImpl() 
+	{
+		
+	}
 
-@Autowired
-public LoginManagerImpl(LoginDao loginDao) {
-	super(loginDao);
-	this.loginDao = loginDao;
-}
+	@Autowired
+	public LoginManagerImpl(LoginDao loginDao) 
+	{
+		super(loginDao);
+		this.loginDao = loginDao;
+	}
 
 	
 	@Override
-	public Boolean isValidStudent(String username, String password) {
+	public Boolean isValidStudent(String username, String password) 
+	{
 		// TODO Auto-generated method stub
 		Boolean auth = new Boolean(false);
 		List<Login> loginList = loginDao.findByUsername(username);
 		
-		if (loginList.size() > 0) {
+		if (loginList.size() > 0) 
+		{
 			Login login = loginList.get(0);
 
-			if (login.getPassword().equals(password)){
+			if (login.getPassword().equals(password))
+			{
 				auth = true;
-			} else {
-				}
-			}		
+			} 
+			else 
+			{
+			}
+		}		
 		return auth;
 	}
 

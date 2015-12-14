@@ -13,7 +13,6 @@ import org.appfuse.model.BaseObject;
 @XmlRootElement
 @Entity
 @Table(name = "employee")
-
 public class Employee extends BaseObject {
 
 	/**
