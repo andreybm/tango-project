@@ -141,49 +141,4 @@ ALTER TABLE `food`
 ALTER TABLE `menu`
   ADD CONSTRAINT `FK_MENU_REFERENCE_COMIDA` FOREIGN KEY (`COMIDAID`) REFERENCES `comida` (`COMIDAID`),
   ADD CONSTRAINT `FK_MENU_REFERENCE_EMPLEADO` FOREIGN KEY (`EMPLEADOID`) REFERENCES `empleado` (`EMPLEADOID`);
-  
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de datos: `tango_project`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `category`
---
-
-CREATE TABLE IF NOT EXISTS `food_category` (
-  `CATEGORY_ID` bigint(255) NOT NULL,
-  `CATEGORY_NAME` varchar(50) NOT NULL,
-  `CATEGORY_DESCRIPTION` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `food_category`
---
-
-INSERT INTO `category` (`CATEGORY_ID`, `CATEGORY_NAME`, `CATEGORY_DESCRIPTION`) VALUES
-(1, 'Comida Rapida', 'Prueba nuestras deliciosas comidas rapidas'),
-(2, 'Ensaladas', 'Frescas ensaladas servidas en nuestro menu');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `food_category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`CATEGORY_ID`), ADD UNIQUE KEY `CATEGORY_ID` (`CATEGORY_ID`);
-
 
