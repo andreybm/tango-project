@@ -168,22 +168,10 @@ CREATE TABLE IF NOT EXISTS `food_category` (
   `CATEGORY_DESCRIPTION` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `food_category`
---
-
-INSERT INTO `category` (`CATEGORY_ID`, `CATEGORY_NAME`, `CATEGORY_DESCRIPTION`) VALUES
-(1, 'Comida Rapida', 'Prueba nuestras deliciosas comidas rapidas'),
-(2, 'Ensaladas', 'Frescas ensaladas servidas en nuestro menu');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `food_category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`CATEGORY_ID`), ADD UNIQUE KEY `CATEGORY_ID` (`CATEGORY_ID`);
+CREATE TABLE `tango_project`.`Login` ( 
+	`userId` BIGINT NOT NULL ,
+	`username` VARCHAR(50) NOT NULL ,
+	`password` VARCHAR(50) NOT NULL ,
+	PRIMARY KEY (`userId`)) ENGINE = InnoDB;
 
 
