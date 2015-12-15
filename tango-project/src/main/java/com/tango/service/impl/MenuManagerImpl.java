@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.tango.model.Menu;
 import com.tango.service.MenuManager;
-import com.tango.dao.FoodDao;
 import com.tango.dao.MenuDao;
 
 
