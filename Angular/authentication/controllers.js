@@ -12,7 +12,7 @@ angular.module('Authentication')
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
                 if(response.success) {
-                    $location.path('/');
+                    $location.path('/food');
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
