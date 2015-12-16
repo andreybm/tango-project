@@ -29,7 +29,7 @@ public class Menu extends BaseObject{
 	private Long menuId;
 	private Set<Employee> employee;
 	private Set<Food> food;
-	
+
 	
 	// START SNIPPET: menuId
 	@Id
@@ -44,7 +44,7 @@ public class Menu extends BaseObject{
 		this.menuId = menuId;
 	}
 	
-	@Column(name = "employe_id", length = 50)
+	@Column(name = "employee_id", length = 50)
 	public Set<Employee> getEmployee() {
 		return employee;
 	}
