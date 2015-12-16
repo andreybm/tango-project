@@ -52,7 +52,7 @@ public class Menu extends BaseObject{
 		this.employee = employee;
 	}
 	
-	@ManyToOne(fetch = FetchType.LAZY, mappedBy = "Menu", cascade = CascadeType.ALL)
+	//@ManyToOne(fetch = FetchType.LAZY, mappedBy = "Menu", cascade = CascadeType.ALL)
 	@Column(name = "food_id", length = 50)
 	public Set<Food> getFood() {
 		return food;
