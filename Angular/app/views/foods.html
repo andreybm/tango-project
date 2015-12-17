@@ -1,0 +1,18 @@
+<h2>Comidas</h2>
+<div ng-controller="foodsController">
+	<li ng-repeat="food in data.food">
+	
+		      <li> Id: {{food.foodId}} </li>
+			  <li> Nombre: {{food.dishName}}  </li>
+			  <li>Descripcion: {{food.dishDescription}} </li>
+			  <li>Days Served: {{food.daysServed}} </li>
+			  <li>Category: {{food.foodCategory}} </li>
+		<ul>
+			<li ng-repeat="foodCategory in food.foodCategory">
+				<span>Candidate Work Id: {{foodCategory.cantegory_id}}</span>  
+				<span>Name: {{foodCategory.category_name}}</span>
+				<span>Category: {{foodCategory.category_description}}</span>
+			</li>
+		</ul>
+	</li>
+</div>
